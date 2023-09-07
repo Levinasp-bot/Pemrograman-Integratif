@@ -4,7 +4,7 @@ Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan k
 
 * ## Langkah 1
 > Download dan jalankan Composer-Setup.exe
-![Screen shoot git clone](../Screenshoot/1_git_clone.png)
+!(../Screenshoot/1.png)
 
 * ## git add / change stages 
 > ```   git add . ``` Menambahkan file yang akan di ubah ke stage changes agar dapat dicommit dan dilanjut push origin / branch lainnya <br /><br />
