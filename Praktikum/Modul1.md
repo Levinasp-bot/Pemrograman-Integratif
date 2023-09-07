@@ -3,8 +3,8 @@
 Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan konofigurasi App Key.
 
 * ## Langkah 1
-> Download dan jalankan Composer-Setup.exe
-!(../Screenshoot/1.png)
+> Download dan jalankan Composer-Setup.exe <br /><br />
+![Screen shot git](../Screenshoot/1.png)
 
 * ## git add / change stages 
 > ```   git add . ``` Menambahkan file yang akan di ubah ke stage changes agar dapat dicommit dan dilanjut push origin / branch lainnya <br /><br />
