@@ -1,9 +1,8 @@
-# Pratikum Git version control and branch management
+# Praktikum 1 : Instalasi Lumen, MongoDB, dan Konfirgurasi App Key
 
-Disini kumpulan code dan foto hasil Screenshot penerapan pembelajaran saya di section 2.<br />
- [Repo 1]: https://github.com/iqbalbiondy/belajargit.git "link repository latihan saya"
+Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan konofigurasi App Key.
 
-* ## git clone
+* ## Langkah 1
 > ```git clone <clone-link> ```  clone repo github saya ke local <br /><br />
 ![Screen shoot git clone](../Screenshoot/1_git_clone.png)
 
