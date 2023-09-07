@@ -8,7 +8,7 @@ Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan k
 
 * ## git add / change stages 
 > ```   git add . ``` Menambahkan file yang akan di ubah ke stage changes agar dapat dicommit dan dilanjut push origin / branch lainnya <br /><br />
-![Screen shot git](../Screenshoot/2_stage_changes_or_git_add.png)
+![Screen shot git](Screenshoot/1.png)
 
 * ## git commit
 > ``` git commit -m "<message>" ``` Commit data dari changes stage <br /><br />
