@@ -2,44 +2,27 @@
 
 Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan konofigurasi App Key.
 
-* ## Langkah 1
+* ## Langkah 1 (Instalasi Composer)
 > Download dan jalankan Composer-Setup.exe <br /><br />
-![Screen shot git](../Screenshoot/1.png)
+![Screenshot Instalasi Composer](../Screenshoot/1.png)
 
-* ## git add / change stages 
-> ```   git add . ``` Menambahkan file yang akan di ubah ke stage changes agar dapat dicommit dan dilanjut push origin / branch lainnya <br /><br />
-![Screen shot git](Screenshoot/1.png)
+* ## Langkah 2 (Instalasi MongoDB)
+> Buka halaman https://www.mongodb.com/try/download/community dan klik Download <br /><br />
+> Menjalankan mongodb-windows-x86_64-6.0.1-signed.msi
+![Screenshot Instalasi MongoDB](../Screenshoot/2.png)
+> Instalasi MongoDB telah berhasil
+![Screenshot Instalasi MongoDB](../Screenshoot/2i.png)
+> Membuka MongoDB yang telah diinstal
+![Tampilan Aplikasi MongoDB Compass](../Screenshoot/mongodb.png)
 
-* ## git commit
+* ## Langkah 3 (Instalasi Lumen)
 > ``` git commit -m "<message>" ``` Commit data dari changes stage <br /><br />
 ![Screen shot git](../Screenshoot/3_git_commit_with_massege.png)
 
-* ## git push
+* ## Langkah 4 (Setting App Key)
 > ``` git push origin ```push dari branch local ke repository github <br /><br />
 ![Screen shot git](../Screenshoot/4_git_push.png)
 
-* ## git stash
-> Memindahkan code yang saya buat <br /><br />
-![Screen shot git](../Screenshoot/5_add_git_stash.png)
-
-* ## git reset metode soft
-> ``` git reset <kode version from log --oneline> --soft ``` memindahkan head ke commit versi tertentu <br /><br />
-![Screen shot git](../Screenshoot/6_git_reset.png)
-
-* ## git branch
-> ``` git branch <nama-branch> ``` membuat branch pada local <br /><br />
-![Screen shot git](../Screenshoot/7_git_branch_list.png) <br /><br />
-> bila ingin memindahkan branch dari local ke repository tambah ``` git push -u origin <nama-branch> ```
-
-* ## git conflict
-> Contoh conflict saat pratikum 
-![Screen shot git](../Screenshoot/8_conflict.png) <br /><br />
-> saya menggunakan github dekstop dan terdekteksi conflict seperti diatas. Dan saya solve this problem like video tutorial di LMS alta <br /><br />
-![Screen shot git](../Screenshoot/8_conflict_solve.png) <br /><br />
-
-* ## git graph final
-> Hasil branch saya pada praktikum section 2
-![Screen shot git](../Screenshoot/final_git_graph.png) <br /><br />
 
 
 
