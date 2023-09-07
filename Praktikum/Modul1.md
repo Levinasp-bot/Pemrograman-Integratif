@@ -16,12 +16,22 @@ Langkah - langkah dan hasil Screenshot praktikum instalasi Lumen, MongoDB, dan k
 ![Tampilan Aplikasi MongoDB Compass](../Screenshoot/mongodb.png)
 
 * ## Langkah 3 (Instalasi Lumen)
-> ``` git commit -m "<message>" ``` Commit data dari changes stage <br /><br />
-![Screen shot git](../Screenshoot/3_git_commit_with_massege.png)
+> Buka cmd dan masuk ke path folder yang telah dibuat untuk instalasi lumen
+![](../Screenshoot/3f.png)
+> Instalasi lumen di cmd dengan command composer create-project --prefer-dist laravel/lumen lumenapi
+![](../Screenshoot/install lumen.png)
+> Menjalankan projek lumen
+![](../Screenshoot/Screenshot 2023-09-06 144104.png)
 
-* ## Langkah 4 (Setting App Key)
-> ``` git push origin ```push dari branch local ke repository github <br /><br />
-![Screen shot git](../Screenshoot/4_git_push.png)
+* ## Langkah 4 (Konfigurasi App Key)
+> Membuka file web.php pada folder routes, kemudian buat endpoint yang akan mengembalikan random string dengan
+panjang 32
+![](../Screenshoot/web.php.png)
+> Melakukan generate dari website https://pinetools.com/random-string-generator
+![](../Screenshoot/generated string.png)
+> Memasukkan random string tersebut ke file .env kita pada bagian
+APP_KEY
+![](../Screenshoot/app key .env.png)
 
 
 
