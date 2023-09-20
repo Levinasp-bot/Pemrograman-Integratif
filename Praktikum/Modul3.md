@@ -37,10 +37,10 @@ npm i express mongoose dotenv
 
 * ### Langkah 2
 > MeLakukan pembuatan file .env dan masukkan baris berikut
-> PORT=5000
-> Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi
+<br />PORT=5000
+<br />Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi
 kembali
-> const PORT = process.env.PORT || 8000;
+<br />const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
 console.log(`Running on port ${PORT}`);
 })
@@ -391,7 +391,7 @@ error: error.message,
 ![](../Screenshoot/Modul3/35.png)
 
 * ### Langkah 10
-> Ubah judul buku Dilan 1991 menjadi “<NAMA PANGGILAN> 1991” dengan
+> Ubah judul buku Dilan 1991 menjadi “<NAMAPANGGILAN> 1991” dengan
 Postman
 ![](../Screenshoot/Modul3/36.png)
 
