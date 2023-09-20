@@ -36,60 +36,118 @@ npm i express mongoose dotenv
 ![](../Screenshoot/Modul3/7.png)
 
 * ### Langkah 2
-> Lakukan pembuatan file .env dan masukkan baris berikut PORT=5000
+> Lakukan pembuatan file .env dan masukkan baris berikut
+PORT=5000
 > Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi
 kembali
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+console.log(`Running on port ${PORT}`);
+})
 ![](../Screenshoot/Modul3/8.png)
 
 * ### Langkah 3
 > Copy connection string yang terdapat pada compas atau atlas dan paste kan pada
 .env seperti berikut
+MONGO_URI=<Connection string masing-masing>
 ![](../Screenshoot/Modul3/9.png)
 
-* ## Langkah 3
-> Melakukan insert buku “Overlord I” dengan menggunakan command
-db.books.insertOne(<data kalian>) , setelah insert buku berhasil maka MongoDB akan
-mengembalikan pesan sebagai berikut.
-![Screenshot insert buku Overlord I](../Screenshoot/Modul2/10.png)
+* ### Langkah 4
+> Tambahkan baris kode berikut pada file index.js
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI);
+const db = mongoose.connection;
+db.on('error', (error) => {
+console.log(error);
+});
+db.once('connected', () => {
+console.log('Mongo connected');
+})
+![](../Screenshoot/Modul3/10.png)
 
-* ## Langkah 4
-> Melakukan insert buku “The Setting Sun” dan “Hujan” dengan insert many dengan
-menggunakan command db.books.insertMany(<data kalian>) , dan akan mengembalikan pesan sebagai berikut.
-![Screenshot insert buku many](../Screenshoot/Modul2/11.png)
+## Pembuatan Routing
+* ### Langkah 1
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/11.png)
 
-* ## Langkah 5
-> Melakukan pencarian buku dengan menggunakan command db.books.find() untuk
-melakukan pencarian semua buku.
-![Screenshot pencarian buku](../Screenshoot/Modul2/12.png)
+* ### Langkah 2
+> Buatlah file book.route.js di dalamnya
+![](../Screenshoot/Modul3/12.png)
 
-* ## Langkah 6
-> Menampilkan seluruh buku dengan author “Osamu Dazai” dengan mengisi argument
-pada find() dengan menggunakan command db.books.find({<filter yang ingin
-diisi>})
-![Screenshot menampilkan seluruh buku](../Screenshoot/Modul2/13.png)
+* ### Langkah 3
+> Tambahkan baris kode berikut untuk fungsi getAllBooks
+const router = require('express').Router();
+router.get('/', function getAllBooks(req, res) {
+res.status(200).json({
+message: 'mendapatkan semua buku'
+})
+})
+module.exports = router;
+![](../Screenshoot/Modul3/13.png)
 
-* ## Langkah 7
-> Melakukan perubahan summary pada buku “Hujan” menjadi “Buku yang bagus
-(<NAMA>,<NIM>) dengan mengunakan command db.books.updateOne({<filter>},
-{$set: {<data yang akan di update>}}) sehingga output yang dihasilkan oleh MongoDB
-akan menjadi seperti berikut
-![Screenshot update buku](../Screenshoot/Modul2/14.png)
+* ### Langkah 4
+> Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
+deleteBook
+const router = require('express').Router();
+...
+router.get('/:id', function getOneBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'mendapatkan satu buku',
+id,
+})
+})
+router.post('/', function createBook(req, res) {
+res.status(200).json({
+message: 'membuat buku baru'
+})
+})
+router.put('/:id', function updateBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'memperbaharui satu buku',
+id,
+})
+})
+router.delete('/:id', function deleteBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'menghapus satu buku',
+id,
+})
+})
+module.exports = router;
+![](../Screenshoot/Modul3/14.png)
 
-* ## Langkah 8
-> Melakukan perubahan publisher menjadi “Yen Press” pada semua buku “Osamu
-Dazai” dengan menggunakan command db.books.updateMany({<filter>}, {$set: {<data
-yang akan di update>}})
-![Screenshot update buku](../Screenshoot/Modul2/15.png)
+* ### Langkah 5
+> Lakukan import book.route.js pada file index.js dan tambahkan baris kode berikut
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const bookRoutes = require('./routes/book.route'); //
+...
+app.get('/', (req, res) => {
+res.status(200).json({
+message: '<nama>,<nim>'
+})
+})
+app.use('/books', bookRoutes); //
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+console.log(`Running on port ${PORT}`);
+})
+![](../Screenshoot/Modul3/15.png)
 
-* ## Langkah 9
-> Melakukan penghapusan pada buku “Overlord I” dengan menggunakan command
-db.books.deleteOne({<argument>})
-![Screenshot delete buku](../Screenshoot/Modul2/16.png)
+* ### Langkah 6
+> Uji salah satu endpoint dengan Postman
+![](../Screenshoot/Modul3/16.png)
 
-* ## Langkah 9
-> Melakukan penghapusan pada semua buku “Osamu Dazai dengan menggunakan
-command db.books.deleteMany({<argument>})
-![Screenshot delete buku](../Screenshoot/Modul2/17.png)
+## Pembuatan Controller
+* ### Langkah 1
+> Lakukan pembuatan direktori controllers di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/17.png)
 
 
 
