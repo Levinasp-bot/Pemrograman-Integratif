@@ -49,22 +49,22 @@ console.log(`Running on port ${PORT}`);
 * ### Langkah 3
 > Copy connection string yang terdapat pada compas atau atlas dan paste kan pada
 .env seperti berikut
-MONGO_URI=<Connection string masing-masing>
+<br />MONGO_URI=<Connection string masing-masing>
 ![](../Screenshoot/Modul3/9.png)
 
 * ### Langkah 4
 > Tambahkan baris kode berikut pada file index.js
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
-const db = mongoose.connection;
-db.on('error', (error) => {
-console.log(error);
-});
-db.once('connected', () => {
-console.log('Mongo connected');
-})
+<br />require('dotenv').config();
+<br />const express = require('express');
+<br />const mongoose = require('mongoose');
+<br />mongoose.connect(process.env.MONGO_URI);
+<br />const db = mongoose.connection;
+<br />db.on('error', (error) => {
+<br />console.log(error);
+<br />});
+<br />db.once('connected', () => {
+<br />console.log('Mongo connected');
+<br />})
 ![](../Screenshoot/Modul3/10.png)
 
 ## Pembuatan Routing
@@ -78,66 +78,66 @@ console.log('Mongo connected');
 
 * ### Langkah 3
 > Tambahkan baris kode berikut untuk fungsi getAllBooks
-const router = require('express').Router();
-router.get('/', function getAllBooks(req, res) {
-res.status(200).json({
-message: 'mendapatkan semua buku'
-})
-})
-module.exports = router;
+<br />const router = require('express').Router();
+<br />router.get('/', function getAllBooks(req, res) {
+<br />res.status(200).json({
+<br />message: 'mendapatkan semua buku'
+<br />})
+<br />})
+<br />module.exports = router;
 ![](../Screenshoot/Modul3/13.png)
 
 * ### Langkah 4
 > Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
 deleteBook
-const router = require('express').Router();
-...
-router.get('/:id', function getOneBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'mendapatkan satu buku',
-id,
-})
-})
-router.post('/', function createBook(req, res) {
-res.status(200).json({
-message: 'membuat buku baru'
-})
-})
-router.put('/:id', function updateBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'memperbaharui satu buku',
-id,
-})
-})
-router.delete('/:id', function deleteBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'menghapus satu buku',
-id,
-})
-})
-module.exports = router;
+<br />const router = require('express').Router();
+<br />...
+<br />router.get('/:id', function getOneBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'mendapatkan satu buku',
+<br />id,
+<br />})
+<br />})
+<br />router.post('/', function createBook(req, res) {
+<br />res.status(200).json({
+<br />message: 'membuat buku baru'
+<br />})
+<br />})
+<br />router.put('/:id', function updateBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'memperbaharui satu buku',
+<br />id,
+<br />})
+<br />})
+<br />router.delete('/:id', function deleteBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'menghapus satu buku',
+<br />id,
+<br />})
+<br />})
+<br />module.exports = router;
 ![](../Screenshoot/Modul3/14.png)
 
 * ### Langkah 5
 > Lakukan import book.route.js pada file index.js dan tambahkan baris kode berikut
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const bookRoutes = require('./routes/book.route'); //
-...
-app.get('/', (req, res) => {
-res.status(200).json({
-message: '<nama>,<nim>'
-})
-})
-app.use('/books', bookRoutes); //
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-console.log(`Running on port ${PORT}`);
-})
+<br />require('dotenv').config();
+<br />const express = require('express');
+<br />const mongoose = require('mongoose');
+<br />const bookRoutes = require('./routes/book.route'); //
+<br />...
+<br />app.get('/', (req, res) => {
+<br />res.status(200).json({
+<br />message: '<nama>,<nim>'
+<br />})
+<br />})
+<br />app.use('/books', bookRoutes); //
+<br />const PORT = process.env.PORT || 8000;
+<br />app.listen(PORT, () => {
+<br />console.log(`Running on port ${PORT}`);
+<br />})
 ![](../Screenshoot/Modul3/15.png)
 
 * ### Langkah 6
@@ -155,53 +155,53 @@ console.log(`Running on port ${PORT}`);
 
 * ### Langkah 3
 > Salin baris kode dari routes untuk fungsi getAllBooks
-function getAllBooks(req, res) {
-res.status(200).json({
-message: 'mendapatkan semua buku'
-})
-};
-module.exports = {
-getAllBooks,
-}
+<br />function getAllBooks(req, res) {
+<br />res.status(200).json({
+<br />message: 'mendapatkan semua buku'
+<br />})
+<br />};
+<br />module.exports = {
+<br />getAllBooks,
+<br />}
 ![](../Screenshoot/Modul3/19.png)
 
 * ### Langkah 4
 > Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
 deleteBook
-Integrasi MongoDB dan Express 9
-...
-function getOneBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'mendapatkan satu buku',
-id,
-})
-}
-function createBook(req, res) {
-res.status(200).json({
-message: 'membuat buku baru'
-})
-}
-function updateBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'memperbaharui satu buku',
-id,
-})
-}
-function deleteBook(req, res) {
-const id = req.params.id;
-res.status(200).json({
-message: 'menghapus satu buku',
-id,
-})
-}
-module.exports = {
-getAllBooks,
-getOneBook, //
-createBook, //
-updateBook, //
-deleteBook //
+<br />Integrasi MongoDB dan Express 9
+<br />...
+<br />function getOneBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'mendapatkan satu buku',
+<br />id,
+<br />})
+<br />}
+<br />function createBook(req, res) {
+<br />res.status(200).json({
+<br />message: 'membuat buku baru'
+<br />})
+<br />}
+<br />function updateBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'memperbaharui satu buku',
+<br />id,
+<br />})
+<br />}
+<br />function deleteBook(req, res) {
+<br />const id = req.params.id;
+<br />res.status(200).json({
+<br />message: 'menghapus satu buku',
+<br />id,
+<br />})
+<br />}
+<br />module.exports = {
+<br />getAllBooks,
+<br />getOneBook, //
+<br />createBook, //
+<br />updateBook, //
+<br />deleteBook //
 }
 ![](../Screenshoot/Modul3/20.png)
 
