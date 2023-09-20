@@ -1,4 +1,4 @@
-# Praktikum 2 : CRUD MongoDB Compass dan Shell
+# Praktikum 3 : Integrasi MongoDB dan Express
 
 Langkah - langkah dan hasil Screenshot praktikum CRUD MongoDB Compass dan Shell.
 ## MongoDB Compass
