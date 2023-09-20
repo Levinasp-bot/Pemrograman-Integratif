@@ -3,8 +3,8 @@
 Langkah Percobaan
 ## Percobaan instalasi NodeJS
 * ## Langkah 1 
-> Melakukan koneksi ke MongoDB menggunakan connection string <br /><br />
-![Screenshot koneksi ke MongoDB](../Screenshoot/Modul2/1.png)
+> Buka Halaman https://nodejs.org/en/ <br /><br />
+![Screenshot koneksi ke MongoDB](../Screenshoot/Modul 3/1.png)
 
 * ## Langkah 2 
 > Membuat database dengan melakukan klik “Create Database” <br /><br />
