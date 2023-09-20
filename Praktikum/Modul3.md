@@ -149,14 +149,232 @@ console.log(`Running on port ${PORT}`);
 > Lakukan pembuatan direktori controllers di tingkat yang sama dengan index.js
 ![](../Screenshoot/Modul3/17.png)
 
+* ### Langkah 2
+> Buatlah file book.controller.js di dalamnya
+![](../Screenshoot/Modul3/18.png)
 
+* ### Langkah 3
+> Salin baris kode dari routes untuk fungsi getAllBooks
+function getAllBooks(req, res) {
+res.status(200).json({
+message: 'mendapatkan semua buku'
+})
+};
+module.exports = {
+getAllBooks,
+}
+![](../Screenshoot/Modul3/19.png)
 
+* ### Langkah 4
+> Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
+deleteBook
+Integrasi MongoDB dan Express 9
+...
+function getOneBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'mendapatkan satu buku',
+id,
+})
+}
+function createBook(req, res) {
+res.status(200).json({
+message: 'membuat buku baru'
+})
+}
+function updateBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'memperbaharui satu buku',
+id,
+})
+}
+function deleteBook(req, res) {
+const id = req.params.id;
+res.status(200).json({
+message: 'menghapus satu buku',
+id,
+})
+}
+module.exports = {
+getAllBooks,
+getOneBook, //
+createBook, //
+updateBook, //
+deleteBook //
+}
+![](../Screenshoot/Modul3/20.png)
 
+* ### Langkah 5
+> Lakukan import book.controller.js pada file book.route.js
+const router = require('express').Router();
+const book = require('../controllers/book.controller'); //
+...
+module.exports = router;
+![](../Screenshoot/Modul3/21.png)
 
+* ### Langkah 6
+> Lakukan perubahan pada fungsi agar dapat memanggil fungsi dari book.controller.js
+const router = require('express').Router();
+const book = require('../controllers/book.controller');
+router.get('/', book.getAllBooks);
+router.get('/:id', book.getOneBook);
+router.post('/', book.createBook);
+router.put('/:id', book.updateBook);
+router.delete('/:id', book.deleteBook);
+module.exports = router;
+![](../Screenshoot/Modul3/22.png)
 
+## Pembuatan Model
+* ### Langkah 1
+> Lakukan pembuatan direktori models di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/23.png)
 
+* ### Langkah 2
+> Buatlah file book.model.js di dalamnya
+![](../Screenshoot/Modul3/24.png)
 
+* ### Langkah 3
+> Tambahkan baris kode berikut sesuai dengan tabel di atas
+const mongoose = require('mongoose');
+const bookSchema = new mongoose.Schema({
+title: {
+type: String
+},
+author: {
+type: String
+},
+year: {
+type: Number
+},
+pages: {
+type: Number
+},
+summary: {
+type: String
+},
+publisher: {
+type: String
+}
+})
+module.exports = mongoose.model('book', bookSchema);
+![](../Screenshoot/Modul3/25.png)
 
+## Operasi CRUD
+* ### Langkah 1
+> Hapus semua data pada collection books
+![](../Screenshoot/Modul3/26.png)
 
+* ### Langkah 2
+> Lakukan import book.model.js pada file book.controller.js
+const Book = require('../models/book.model');
+![](../Screenshoot/Modul3/27.png)
 
+* ### Langkah 3
+> Lakukan perubahan pada fungsi createBook
+const Book = require('../models/book.model');
+...
+async function createBook(req, res) {
+const book = new Book({
+title: req.body.title,
+author: req.body.author,
+year: req.body.year,
+pages: req.body.pages,
+summary: req.body.summary,
+publisher: req.body.publisher,
+})
+try {
+const savedBook = await book.save();
+res.status(200).json({
+message: 'membuat buku baru',
+book: savedBook,
+})
+} catch (error) {
+res.status(500).json({
+message: 'kesalahan pada server',
+error: error.message,
+})
+}
+}
+![](../Screenshoot/Modul3/28.png)
 
+* ### Langkah 4
+> Buatlah dua buah buku dengan data di bawah ini dengan Postman
+{
+"title": "Dilan 1990",
+"author": "Pidi Baiq",
+"year": 2014,
+"pages": 332,
+"summary": "Mirea, anata wa utsukushī",
+"publisher": "Pastel Books"
+}
+
+{
+"title": "Dilan 1991",
+"author": "Pidi Baiq",
+"year": 2015,
+"pages": 344,
+"summary": "Watashi ga kare o aishite iru to ittara",
+"publisher": "Pastel Books"
+}
+![](../Screenshoot/Modul3/29.png)
+
+* ### Langkah 5
+> Lakukan perubahan pada fungsi getAllBooks
+const Book = require('../models/book.model');
+async function getAllBooks(req, res) {
+try {
+const books = await Book.find();
+res.status(200).json({
+message: 'mendapatkan semua buku',
+books,
+})
+} catch (error) {
+res.status(500).json({
+message: 'kesalahan pada server',
+error: error.message,
+})
+}
+}
+![](../Screenshoot/Modul3/30.png)
+
+* ### Langkah 6
+> Lakukan perubahan pada fungsi getOneBook
+const Book = require('../models/book.model');
+...
+async function getOneBook(req, res) {
+const id = req.params.id;
+try {
+const book = await Book.findById(id);
+res.status(200).json({
+message: 'mendapatkan satu buku',
+book,
+})
+} catch (error) {
+res.status(500).json({
+message: 'kesalahan pada server',
+error: error.message,
+})
+}
+}
+![](../Screenshoot/Modul3/31.png)
+
+* ### Langkah 7
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/32.png)
+
+* ### Langkah 8
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/33.png)
+
+* ### Langkah 9
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/34.png)
+
+* ### Langkah 10
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/35.png)
+
+* ### Langkah 11
+> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+![](../Screenshoot/Modul3/36.png)
