@@ -20,7 +20,7 @@ mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada a
 http://localhost:8000/get, path yang akan kita akses akan berbentuk demikian,
 http://{BASE_URL}{PATH}, jika BASE_URL kita adalah localhost:8000 dan PATH kita
 adalah /get, maka url akan berbentuk seperti diatas.
-![Screenshot . Mencoba mengakses url http://localhost:8000/get sesuai endpoint yang telah ditambahkan sebelumnya](../Screenshoot/Modul4/3.PNG)
+![Screenshot . Mencoba mengakses url http://localhost:8000/get sesuai endpoint yang telah ditambahkan sebelumnya](../Screenshoot/Modul4/3.png)
 
 ## POST, PUT, PATCH, DELETE, dan OPTIONS
 * ## Langkah 1
@@ -40,36 +40,32 @@ adalah /get, maka url akan berbentuk seperti diatas.
 <br> $router->options('/options', function () {
  return 'OPTIONS'; </br>
 <br> }); </br>
-![Screenshot Menambahkan endpoint method POST, PUT, PATCH, DELETE, dan OPTIONS](../Screenshoot/Modul4/4.PNG)
+![Screenshot Menambahkan endpoint method POST, PUT, PATCH, DELETE, dan OPTIONS](../Screenshoot/Modul4/4.png)
 
 * ## Langkah 2
 > Mengakses url http://localhost:8000/get pada Postman
-![Screenshot npm init -](../Screenshoot/Modul4/5.PNG)
+![](../Screenshoot/Modul4/4get.png)
 
 * ## Langkah 3
 > Mengakses url http://localhost:8000/post pada Postman
-![Screenshot instalasi express, mongoose, dan dotenv  ](../Screenshoot/Modul4/6.PNG) 
+![](../Screenshoot/Modul4/4post.png) 
 
 * ## Langkah 4
 > Mengakses url http://localhost:8000/put pada Postman
-![Screenshot instalasi express, mongoose, dan dotenv  ](../Screenshoot/Modul4/7.PNG) 
+![](../Screenshoot/Modul4/4put.ong) 
 
 * ## Langkah 5
 > Mengakses url http://localhost:8000/patch pada Postman
-![Screenshot instalasi express, mongoose, dan dotenv  ](../Screenshoot/Modul4/8.PNG) 
+![](../Screenshoot/Modul4/4patch.png) 
 
 * ## Langkah 6
 > Mengakses url http://localhost:8000/delete pada Postman
-![Screenshot instalasi express, mongoose, dan dotenv  ](../Screenshoot/Modul4/9.PNG) 
-
-* ## Langkah 7
-> Mengakses url http://localhost:8000/options pada Postman
-![Screenshot instalasi express, mongoose, dan dotenv  ](../Screenshoot/Modul4/10.PNG) 
+![](../Screenshoot/Modul4/4delete.png) 
 
 ## Migrasi Database
 * ## Langkah 1 
 >  Sebelum melakukan migrasi database pastikan server database aktif kemudian pastikan sudah membuat database dengan nama lumenapi<br />
-![Screenshot halaman https://nodejs.org/en/](../Screenshoot/Modul4/11.PNG)
+![](../Screenshoot/Modul4/5a.png)
 
 * ## Langkah 2 
 >  Kemudian ubah konfigurasi database pada file .env menjadi seperti ini<br /><br> DB_CONNECTION=mysql <br />
@@ -79,7 +75,7 @@ adalah /get, maka url akan berbentuk seperti diatas.
 <br> DB_USERNAME=root <br />
 <br> DB_PASSWORD=<<password masing-masing>> <br />
 <br> <br />
-![Screenshot jalankan node setup](../Screenshoot/Modul4/12.PNG)
+![](../Screenshoot/Modul4/5b.png)
 
 * ## Langkah 3 
 >Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan beberapa library bawaan dari lumen dengan membuka file app.php pada folder bootstrap dan mengubah baris ini,
@@ -88,7 +84,7 @@ adalah /get, maka url akan berbentuk seperti diatas.
 <br> Menjadi <br />
 <br> $app->withFacades();
 $app->withEloquent(); <br />
-![Screenshot jalankan command node -v ](../Screenshoot/Modul4/13.PNG)
+![](../Screenshoot/Modul4/5c.png)
 
 * ## Langkah 4
 > Setelah itu jalankan command berikut untuk membuat file migration
@@ -97,7 +93,7 @@ untuk tabel users<br />
 <br>php artisan make:migration create_products_table # membuat
 migrasi untuk tabel products<br />
 <br> Setelah menjalankan 2 syntax diatas akan terbuat 2 file pada folder database/migrations dengan format YYYY_MM_DD_HHmmss_nama_migrasi. Pada file migrasi kita akan menemukan fungsi up() dan fungsi down(), fungsi up() akan digunakan pada saat kita melakukan migrasi, fungsi down() akan digunakan saat kita ingin me-rollback migrasi <br />
-![Screenshot insert buku many](../Screenshoot/Modul4/14.PNG)
+![](../Screenshoot/Modul4/5d.png)
 
 * ## Langkah 5
 > Ubah fungsi up pada file migrasi create_users_table menjadi seperti dibawah ini
@@ -110,7 +106,7 @@ migrasi untuk tabel products<br />
 <br>$table->string('password');<br />
 <br>});<br />
 <br>}<br />
-![Screenshot pencarian buku](../Screenshoot/Modul4/15.PNG)
+![](../Screenshoot/Modul4/5e.png)
 
 
 * ## Langkah 6
@@ -128,13 +124,13 @@ migrasi untuk tabel products<br />
 <br>a$table->text('description');<br />
 <br>});<br />
 <br>}<br />
-![Screenshot pencarian buku](../Screenshoot/Modul4/16.PNG)
+![](../Screenshoot/Modul4/5f.png)
 
 * ## Langkah 6
 >  Kemudian jalankan command,
   php artisan migrate
-![Screenshot menampilkan seluruh buku](../Screenshoot/Modul4/17.PNG)
+![](../Screenshoot/Modul4/5g.png)
 
 * ## Langkah 7
 > Tampilan tabel yang berhasil dibuat pada database lumenapi di phpmyadmin
-![Screenshot menampilkan seluruh buku](../Screenshoot/Modul4/18.PNG)
+![](../Screenshoot/Modul4/5h.png)
