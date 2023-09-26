@@ -8,12 +8,12 @@ mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada a
 <br> $router->get('/get', function () {<br />
 <br>  return 'GET';<br />
 <br> }); <br />
-![Screenshot Menambahkan enpoint method GET pada file web.php (routes)](../Screenshoot/Modul4/1.PNG)
+![Screenshot Menambahkan enpoint method GET pada file web.php (routes)](../Screenshoot/Modul4/1.png)
 
 * ## Langkah 2 
 > Setelah itu coba jalankan aplikasi dengan command,
 > php -S localhost:8000 -t public <br /><br />
-![Screenshot jalankan server](../Screenshoot/Modul4/2.PNG)
+![Screenshot jalankan server](../Screenshoot/Modul4/2.png)
 
 * ## Langkah 3 
 > Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
