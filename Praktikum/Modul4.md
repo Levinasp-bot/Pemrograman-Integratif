@@ -43,23 +43,23 @@ adalah /get, maka url akan berbentuk seperti diatas.
 ![Screenshot Menambahkan endpoint method POST, PUT, PATCH, DELETE, dan OPTIONS](../Screenshoot/Modul4/4.png)
 
 * ## Langkah 2
-> Mengakses url http://localhost:8000/get pada Postman
+> Mengakses url http://localhost:8000/get pada Thunder Client
 ![](../Screenshoot/Modul4/4get.png)
 
 * ## Langkah 3
-> Mengakses url http://localhost:8000/post pada Postman
+> Mengakses url http://localhost:8000/post pada Thunder Client
 ![](../Screenshoot/Modul4/4post.png) 
 
 * ## Langkah 4
-> Mengakses url http://localhost:8000/put pada Postman
+> Mengakses url http://localhost:8000/put pada Thunder Client
 ![](../Screenshoot/Modul4/4put.ong) 
 
 * ## Langkah 5
-> Mengakses url http://localhost:8000/patch pada Postman
+> Mengakses url http://localhost:8000/patch pada Thunder Client
 ![](../Screenshoot/Modul4/4patch.png) 
 
 * ## Langkah 6
-> Mengakses url http://localhost:8000/delete pada Postman
+> Mengakses url http://localhost:8000/delete pada Thunder Client
 ![](../Screenshoot/Modul4/4delete.png) 
 
 ## Migrasi Database
