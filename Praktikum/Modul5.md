@@ -5,17 +5,20 @@ Langkah-langkah dan hasil Screenshot praktikum  4 – Basic Routing dan Migratio
 >  Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
 suatu halaman web, kadang kita melihat /users/1 atau /users/2 , hal ini yang dinamakan
 dynamic routes.
+<br>
 <br>Untuk menambahkan dynamic routes pada aplikasi lumen kita, kita dapat menggunakan
 syntax berikut,
 <br>$router->get('/user/{id}', function ($id) {
 <br>return 'User Id = ' . $id;
 <br>});
-> Saat menambahkan parameter pada routes, kita tidak terbatas pada 1 variable saja, namun
+<br>
+<br>Saat menambahkan parameter pada routes, kita tidak terbatas pada 1 variable saja, namun
 kita dapat menambahkan sebanyak yang diperlukan seperti kode berikut,
 <br>$router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
 <br>return 'Post ID = ' . $postId . ' Comments ID = ' . $commentId;
 <br>});
-> Pada dynamic routes kita juga bisa menambahkan optional routes, yang mana optional
+<br>
+<br>Pada dynamic routes kita juga bisa menambahkan optional routes, yang mana optional
 routes tidak mengharuskan kita untuk memberi variable pada endpoint kita, namun saat kita
 memanggil endpoint, dapat menggunakan parameter variable ataupun tidak, seperti pada
 kode dibawah ini
@@ -23,9 +26,7 @@ kode dibawah ini
 <br>return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 <br>});
 ![](../Screenshoot/Modul5/1.PNG)
-![](../Screenshoot/Modul5/1.2.PNG)
-![](../Screenshoot/Modul5/1.3.PNG)
-![](../Screenshoot/Modul5/1.4.PNG)
+
 
 * ## Langkah 2 
 > Setelah itu coba jalankan aplikasi dengan command,
