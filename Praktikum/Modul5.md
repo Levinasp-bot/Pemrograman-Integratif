@@ -22,8 +22,7 @@ kode dibawah ini
 <br>$router->get('/users[/{userId}]', function ($userId = null) {
 <br>return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 <br>});
-![](../Screenshoot/Modul5/1.PNG)
-
+![Menambahkan route](../Screenshoot/Modul5/1.png)
 
 * ## Langkah 2 
 > Setelah itu coba jalankan aplikasi dengan command,
