@@ -1,14 +1,31 @@
-# Praktikum  4 : Basic Routing dan Migration
+# Praktikum  5 : Dynamic Route dan Middleware
 
 Langkah-langkah dan hasil Screenshot praktikum  4 – Basic Routing dan Migration.
-## GET
-* ## Langkah 1 
->  Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat
-mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada akhir file
-<br> $router->get('/get', function () {<br />
-<br>  return 'GET';<br />
-<br> }); <br />
-![Screenshot Menambahkan enpoint method GET pada file web.php (routes)](../Screenshoot/Modul4/1.PNG)
+* ## Langkah 1 Dynamic Route
+>  Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
+suatu halaman web, kadang kita melihat /users/1 atau /users/2 , hal ini yang dinamakan
+dynamic routes.
+<br>Untuk menambahkan dynamic routes pada aplikasi lumen kita, kita dapat menggunakan
+syntax berikut,
+<br>$router->get('/user/{id}', function ($id) {
+<br>return 'User Id = ' . $id;
+<br>});
+> Saat menambahkan parameter pada routes, kita tidak terbatas pada 1 variable saja, namun
+kita dapat menambahkan sebanyak yang diperlukan seperti kode berikut,
+<br>$router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
+<br>return 'Post ID = ' . $postId . ' Comments ID = ' . $commentId;
+<br>});
+> Pada dynamic routes kita juga bisa menambahkan optional routes, yang mana optional
+routes tidak mengharuskan kita untuk memberi variable pada endpoint kita, namun saat kita
+memanggil endpoint, dapat menggunakan parameter variable ataupun tidak, seperti pada
+kode dibawah ini
+<br>$router->get('/users[/{userId}]', function ($userId = null) {
+<br>return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
+<br>});
+![](../Screenshoot/Modul5/1.PNG)
+![](../Screenshoot/Modul5/1.2.PNG)
+![](../Screenshoot/Modul5/1.3.PNG)
+![](../Screenshoot/Modul5/1.4.PNG)
 
 * ## Langkah 2 
 > Setelah itu coba jalankan aplikasi dengan command,
