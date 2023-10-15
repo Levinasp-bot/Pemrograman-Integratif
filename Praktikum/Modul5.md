@@ -24,9 +24,6 @@ kode dibawah ini
 <br>});
 ![Menambahkan route](../Screenshoot/Modul5/1.png)
 ![](../Screenshoot/Modul5/1.1.png)
-![](../Screenshoot/Modul5/1.2.png)
-![](../Screenshoot/Modul5/1.3.png)
-![](../Screenshoot/Modul5/1.4.png)
 
 * ## Langkah 2 Aliases Route
 > Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
