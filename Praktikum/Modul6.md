@@ -4,6 +4,7 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 * ## Model
 >  Pastikan terdapat tabel users yang dibuat menggunakan migration pada bab sebelumnya.
 ![](../Screenshoot/Modul6/1.png)
+
 >  Bersihkan isi User.php yang ada sebelumnya dan isi dengan baris kode berikut
 </br><?php
 </br>namespace App\Models;
