@@ -39,5 +39,99 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 
 * ## Request Handler
 >  Lakukan import library Request dengan menambahkan baris berikut di bagian atas file
-> use Illuminate\Http\Request;
+</br> use Illuminate\Http\Request;
 ![web.php](../Screenshoot/Modul6/6.png)
+
+>  Ubah fungsi index menjadi
+</br>public function index (Request $request)
+</br>{
+</br>return 'Hello, from lumen! We got your request from endpoint: ' . $request->path();
+</br>}
+![fungsi index](../Screenshoot/Modul6/7.png)
+
+>  Menjalankan Aplikasi
+![web.php](../Screenshoot/Modul6/8.png)
+
+* ## Response Handler
+>  Lakukan import library Response dengan menambahkan baris berikut di bagian atas file
+</br> use Illuminate\Http\Response;
+![library response](../Screenshoot/Modul6/9.png)
+
+>  Buatlah fungsi hello() yang berisi
+</br>public function hello()
+</br>{
+</br>$data['status'] = 'Success';
+</br>$data['message'] = 'Hello, from lumen!';
+</br>return (new Response($data, 201))
+</br>->header('Content-Type', 'application/json');
+</br>}
+![fungsi hello](../Screenshoot/Modul6/10.png)
+
+>  Tambahkan route /hello pada file routes/web.php
+</br>$router->get('/hello', ['uses' => 'HomeController@hello']);
+![route hello](../Screenshoot/Modul6/11.png)
+
+>  Menjalankan aplikasi pada route /hello
+![web.php](../Screenshoot/Modul6/12.png)
+
+* ## Penerapan
+>  Lakukan import model User dengan menambahkan baris berikut di bagian atas file
+</br>use App\Models\User;
+![import model user](../Screenshoot/Modul6/13.png)
+
+> Tambahkan ketiga fungsi berikut di HomeController.php
+</br>public function defaultUser()
+</br>{
+</br>$user = User::create([
+</br>'name' => 'Nahida',
+</br>'email' => 'nahida@akademiya.ac.id',
+</br>'password' => 'smol'
+</br>]);
+</br>return response()->json([
+</br>'status' => 'Success',
+</br>'message' => 'default user created',
+</br>'data' => [
+</br>'user' => $user,
+</br>]
+</br>],200);
+</br>}
+</br>public function createUser(Request $request)
+</br>{
+</br>$name = $request->name;
+</br>$email = $request->email;
+</br>$password = $request->password;
+</br>$user = User::create([
+</br>'name' => $name,
+</br>'email' => $email,
+</br>'password' => $password
+</br>]);
+</br>return response()->json([
+</br>'status' => 'Success',
+</br>'message' => 'new user created',
+</br>'data' => [
+</br>'user' => $user,
+</br>]
+</br>],200);
+</br>}
+</br>public function getUsers()
+</br>{
+</br>$users = User::all();
+</br>return response()->json([
+</br>'status' => 'Success',
+</br>'message' => 'all users grabbed',
+</br>'data' => [
+</br>'users' => $users,
+</br>]
+</br>],200);
+</br>}
+</br>// Tiga Fungsi
+</br>}
+![menambahkan 3 fungsi](../Screenshoot/Modul6/14.png)
+
+> Tambahkan ketiga route pada file routes/web.php menggunakan group route
+</br>$router->group(['prefix' => 'users'], function () use ($router) {
+</br>$router->post('/default', ['uses' => 'HomeController@defaultUser']);
+</br>$router->post('/new', ['uses' => 'HomeController@createUser']);
+</br>$router->get('/all', ['uses' => 'HomeController@getUsers']);
+</br>});
+![menambahkan 3 route](../Screenshoot/Modul6/15.png)
