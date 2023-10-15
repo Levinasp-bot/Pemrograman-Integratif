@@ -1,6 +1,6 @@
 # Praktikum  5 : Dynamic Route dan Middleware
 
-Langkah-langkah dan hasil Screenshot praktikum  4 – Basic Routing dan Migration.
+Langkah-langkah dan hasil Screenshot praktikum  5 : Dynamic Route dan Middleware
 * ## Langkah 1 Dynamic Route
 >  Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
 suatu halaman web, kadang kita melihat /users/1 atau /users/2 , hal ini yang dinamakan
@@ -23,6 +23,10 @@ kode dibawah ini
 <br>return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 <br>});
 ![Menambahkan route](../Screenshoot/Modul5/1.png)
+![](../Screenshoot/Modul5/1.1.png)
+![](../Screenshoot/Modul5/1.2.png)
+![](../Screenshoot/Modul5/1.3.png)
+![](../Screenshoot/Modul5/1.4.png)
 
 
 * ## Langkah 2 Aliases Route
