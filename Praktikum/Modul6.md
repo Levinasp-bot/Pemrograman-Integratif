@@ -135,3 +135,12 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 </br>$router->get('/all', ['uses' => 'HomeController@getUsers']);
 </br>});
 ![menambahkan 3 route](../Screenshoot/Modul6/15.png)
+
+>  Jalankan aplikasi pada route /users/default menggunakan Postman
+![menjalankan aplikasi di postman](../Screenshoot/Modul6/16.png)
+
+>  Jalankan aplikasi pada route /users/new dengan mengisi body
+![menjalankan aplikasi di postman](../Screenshoot/Modul6/17.png)
+
+>  Jalankan aplikasi pada route /users/all
+![menjalankan aplikasi di postman](../Screenshoot/Modul6/18.png)
