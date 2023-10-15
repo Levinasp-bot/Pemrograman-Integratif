@@ -23,7 +23,7 @@ kode dibawah ini
 <br>return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 <br>});
 ![Menambahkan route](../Screenshoot/Modul5/1.png)
-![](../Screenshoot/Modul5/1.1.png)
+
 
 * ## Langkah 2 Aliases Route
 > Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
