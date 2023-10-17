@@ -3,40 +3,40 @@
 Langkah Percobaan
 ## Percobaan instalasi NodeJS
 * ### Langkah 1 
-> Membuka Halaman https://nodejs.org/en/ <br /><br />
+</br>Membuka Halaman https://nodejs.org/en/ <br /><br />
 ![](../Screenshoot/Modul3/1.png)
 
 * ### Langkah 2 
-> Mengunduh dan menjalankan node setup <br /><br />
+</br>Mengunduh dan menjalankan node setup <br /><br />
 
 * ### Langkah 3 
-> Setelah instalasi selesai, menjalankan command node -v untuk memeriksa apakah
+</br>Setelah instalasi selesai, menjalankan command node -v untuk memeriksa apakah
 NodeJS sudah terinstall
 ![Screenshot insert buku pertama](../Screenshoot/Modul3/3.png)
 
 ## Inisiasi project Express dan pemasangan package
 * ### Langkah 1 
-> Membuat folder dengan nama express-mongodb dan masuk ke dalam
+</br>Membuat folder dengan nama express-mongodb dan masuk ke dalam
 folder tersebut lalu buka melalui text editor masing-masing
 ![](../Screenshoot/Modul3/4.png)
 
 * ### Langkah 2
-> Melakukan npm init untuk mengenerate file package.json dengan menggunakan
+</br>Melakukan npm init untuk mengenerate file package.json dengan menggunakan
 command npm init -y
 ![](../Screenshoot/Modul3/5.png)
 
 * ### Langkah 3
-> Melakukan instalasi express, mongoose, dan dotenv dengan menggunakan command
+</br>Melakukan instalasi express, mongoose, dan dotenv dengan menggunakan command
 npm i express mongoose dotenv
 ![](../Screenshoot/Modul3/6.png)
 
 ## Koneksi Express ke MongoDB
 * ### Langkah 1
-> Membuat file index.js pada root folder dan masukkan kode di bawah ini
+</br>Membuat file index.js pada root folder dan masukkan kode di bawah ini
 ![](../Screenshoot/Modul3/7.png)
 
 * ### Langkah 2
-> MeLakukan pembuatan file .env dan masukkan baris berikut
+</br>MeLakukan pembuatan file .env dan masukkan baris berikut
 <br />PORT=5000
 <br />Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi
 kembali
@@ -47,13 +47,13 @@ console.log(`Running on port ${PORT}`);
 ![](../Screenshoot/Modul3/8.png)
 
 * ### Langkah 3
-> Copy connection string yang terdapat pada compas atau atlas dan paste kan pada
+</br>Copy connection string yang terdapat pada compas atau atlas dan paste kan pada
 .env seperti berikut
 <br />MONGO_URI=<Connection string masing-masing>
 ![](../Screenshoot/Modul3/9.png)
 
 * ### Langkah 4
-> Tambahkan baris kode berikut pada file index.js
+</br>Tambahkan baris kode berikut pada file index.js
 <br />require('dotenv').config();
 <br />const express = require('express');
 <br />const mongoose = require('mongoose');
@@ -69,15 +69,15 @@ console.log(`Running on port ${PORT}`);
 
 ## Pembuatan Routing
 * ### Langkah 1
-> Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
+</br>Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js
 ![](../Screenshoot/Modul3/11.png)
 
 * ### Langkah 2
-> Buatlah file book.route.js di dalamnya
+</br>Buatlah file book.route.js di dalamnya
 ![](../Screenshoot/Modul3/12.png)
 
 * ### Langkah 3
-> Tambahkan baris kode berikut untuk fungsi getAllBooks
+</br>Tambahkan baris kode berikut untuk fungsi getAllBooks
 <br />const router = require('express').Router();
 <br />router.get('/', function getAllBooks(req, res) {
 <br />res.status(200).json({
@@ -88,7 +88,7 @@ console.log(`Running on port ${PORT}`);
 ![](../Screenshoot/Modul3/13.png)
 
 * ### Langkah 4
-> Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
+</br>Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
 deleteBook
 <br />const router = require('express').Router();
 <br />...
@@ -122,7 +122,7 @@ deleteBook
 ![](../Screenshoot/Modul3/14.png)
 
 * ### Langkah 5
-> Lakukan import book.route.js pada file index.js dan tambahkan baris kode berikut
+</br>Lakukan import book.route.js pada file index.js dan tambahkan baris kode berikut
 <br />require('dotenv').config();
 <br />const express = require('express');
 <br />const mongoose = require('mongoose');
@@ -141,20 +141,20 @@ deleteBook
 ![](../Screenshoot/Modul3/15.png)
 
 * ### Langkah 6
-> Uji salah satu endpoint dengan Postman
+</br>Uji salah satu endpoint dengan Postman
 ![](../Screenshoot/Modul3/16.png)
 
 ## Pembuatan Controller
 * ### Langkah 1
-> Lakukan pembuatan direktori controllers di tingkat yang sama dengan index.js
+</br>Lakukan pembuatan direktori controllers di tingkat yang sama dengan index.js
 ![](../Screenshoot/Modul3/17.png)
 
 * ### Langkah 2
-> Buatlah file book.controller.js di dalamnya
+</br>Buatlah file book.controller.js di dalamnya
 ![](../Screenshoot/Modul3/18.png)
 
 * ### Langkah 3
-> Salin baris kode dari routes untuk fungsi getAllBooks
+</br>Salin baris kode dari routes untuk fungsi getAllBooks
 <br />function getAllBooks(req, res) {
 <br />res.status(200).json({
 <br />message: 'mendapatkan semua buku'
@@ -166,7 +166,7 @@ deleteBook
 ![](../Screenshoot/Modul3/19.png)
 
 * ### Langkah 4
-> Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
+</br>Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan
 deleteBook
 <br />Integrasi MongoDB dan Express 9
 <br />...
@@ -206,7 +206,7 @@ deleteBook
 ![](../Screenshoot/Modul3/20.png)
 
 * ### Langkah 5
-> Lakukan import book.controller.js pada file book.route.js
+</br>Lakukan import book.controller.js pada file book.route.js
 const router = require('express').Router();
 const book = require('../controllers/book.controller'); //
 ...
@@ -214,7 +214,7 @@ module.exports = router;
 ![](../Screenshoot/Modul3/21.png)
 
 * ### Langkah 6
-> Lakukan perubahan pada fungsi agar dapat memanggil fungsi dari book.controller.js
+</br>Lakukan perubahan pada fungsi agar dapat memanggil fungsi dari book.controller.js
 const router = require('express').Router();
 const book = require('../controllers/book.controller');
 router.get('/', book.getAllBooks);
@@ -227,15 +227,15 @@ module.exports = router;
 
 ## Pembuatan Model
 * ### Langkah 1
-> Lakukan pembuatan direktori models di tingkat yang sama dengan index.js
+</br>Lakukan pembuatan direktori models di tingkat yang sama dengan index.js
 ![](../Screenshoot/Modul3/24.png)
 
 * ### Langkah 2
-> Buatlah file book.model.js di dalamnya
+</br>Buatlah file book.model.js di dalamnya
 ![](../Screenshoot/Modul3/25.png)
 
 * ### Langkah 3
-> Tambahkan baris kode berikut sesuai dengan tabel di atas
+</br>Tambahkan baris kode berikut sesuai dengan tabel di atas
 const mongoose = require('mongoose');
 const bookSchema = new mongoose.Schema({
 title: {
@@ -262,16 +262,16 @@ module.exports = mongoose.model('book', bookSchema);
 
 ## Operasi CRUD
 * ### Langkah 1
-> Hapus semua data pada collection books
+</br>Hapus semua data pada collection books
 ![](../Screenshoot/Modul3/27.png)
 
 * ### Langkah 2
-> Lakukan import book.model.js pada file book.controller.js
+</br>Lakukan import book.model.js pada file book.controller.js
 const Book = require('../models/book.model');
 ![](../Screenshoot/Modul3/28.png)
 
 * ### Langkah 3
-> Lakukan perubahan pada fungsi createBook
+</br>Lakukan perubahan pada fungsi createBook
 const Book = require('../models/book.model');
 ...
 async function createBook(req, res) {
@@ -299,7 +299,7 @@ error: error.message,
 ![](../Screenshoot/Modul3/29.png)
 
 * ### Langkah 4
-> Buatlah dua buah buku dengan data di bawah ini dengan Postman
+</br>Buatlah dua buah buku dengan data di bawah ini dengan Postman
 {
 "title": "Dilan 1990",
 "author": "Pidi Baiq",
@@ -320,7 +320,7 @@ error: error.message,
 ![](../Screenshoot/Modul3/30.png)
 
 * ### Langkah 5
-> Lakukan perubahan pada fungsi getAllBooks
+</br>Lakukan perubahan pada fungsi getAllBooks
 const Book = require('../models/book.model');
 async function getAllBooks(req, res) {
 try {
@@ -339,7 +339,7 @@ error: error.message,
 ![](../Screenshoot/Modul3/31.png)
 
 * ### Langkah 6
-> Lakukan perubahan pada fungsi getOneBook
+</br>Lakukan perubahan pada fungsi getOneBook
 const Book = require('../models/book.model');
 ...
 async function getOneBook(req, res) {
@@ -360,16 +360,16 @@ error: error.message,
 ![](../Screenshoot/Modul3/32.png)
 
 * ### Langkah 7
-> Tampilkan semua buku dengan Postman
+</br>Tampilkan semua buku dengan Postman
 ![](../Screenshoot/Modul3/33.png)
 
 * ### Langkah 8
-> Tampilkan buku Dilan 1990 dengan Postman
+</br>Tampilkan buku Dilan 1990 dengan Postman
 ![](../Screenshoot/Modul3/34.png)
 
 * ### Langkah 9
-> Lakukan perubahan pada fungsi updateBook
-> const Book = require('../models/book.model');
+</br>Lakukan perubahan pada fungsi updateBook
+</br>const Book = require('../models/book.model');
 ...
 async function updateBook(req, res) {
 const id = req.params.id;
@@ -391,13 +391,13 @@ error: error.message,
 ![](../Screenshoot/Modul3/35.png)
 
 * ### Langkah 10
-> Ubah judul buku Dilan 1991 menjadi “<NAMAPANGGILAN> 1991” dengan
+</br>Ubah judul buku Dilan 1991 menjadi “<NAMAPANGGILAN> 1991” dengan
 Postman
 ![](../Screenshoot/Modul3/36.png)
 
 * ### Langkah 11
-> Lakukan perubahan pada fungsi deleteBook
-> const Book = require('../models/book.model');
+</br>Lakukan perubahan pada fungsi deleteBook
+</br>const Book = require('../models/book.model');
 ...
 async function deleteBook(req, res) {
 const id = req.params.id;
@@ -417,5 +417,5 @@ error: error.message,
 ![](../Screenshoot/Modul3/37.png)
 
 * ### Langkah 11
-> Hapus buku Dilan 1990 dengan Postman
+</br>Hapus buku Dilan 1990 dengan Postman
 ![](../Screenshoot/Modul3/38.png)
