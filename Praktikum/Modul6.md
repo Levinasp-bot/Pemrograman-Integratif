@@ -2,10 +2,10 @@
 
 Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Request-Response Handler
 * ## Model
->  Pastikan terdapat tabel users yang dibuat menggunakan migration pada bab sebelumnya.
+Pastikan terdapat tabel users yang dibuat menggunakan migration pada bab sebelumnya.
 ![tabel users](../Screenshoot/Modul6/1.png)
 
->  Bersihkan isi User.php yang ada sebelumnya dan isi dengan baris kode berikut
+</br>Bersihkan isi User.php yang ada sebelumnya dan isi dengan baris kode berikut
 </br><?php
 </br>namespace App\Models;
 </br>use Illuminate\Database\Eloquent\Model;
@@ -27,37 +27,37 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 ![user.php](../Screenshoot/Modul6/2.png)
 
 * ## Controller
->  Buatlah salinan ExampleController.php pada folder app/Http/Controllers dengan nama HomeController.php dan buatlah fungsi index()
+</br>Buatlah salinan ExampleController.php pada folder app/Http/Controllers dengan nama HomeController.php dan buatlah fungsi index()
 ![user.php](../Screenshoot/Modul6/3.png)
 
->  Ubah route / pada file routes/web.php menjadi seperti ini
-> $router->get('/', ['uses' => 'HomeController@index']);
+</br>Ubah route / pada file routes/web.php menjadi seperti ini
+</br>$router->get('/', ['uses' => 'HomeController@index']);
 ![web.php](../Screenshoot/Modul6/4.png)
 
->  Menjalankan Aplikasi
+</br>Menjalankan Aplikasi
 ![web.php](../Screenshoot/Modul6/5.png)
 
 * ## Request Handler
->  Lakukan import library Request dengan menambahkan baris berikut di bagian atas file
+</br>Lakukan import library Request dengan menambahkan baris berikut di bagian atas file
 </br> use Illuminate\Http\Request;
 ![web.php](../Screenshoot/Modul6/6.png)
 
->  Ubah fungsi index menjadi
+</br>Ubah fungsi index menjadi
 </br>public function index (Request $request)
 </br>{
 </br>return 'Hello, from lumen! We got your request from endpoint: ' . $request->path();
 </br>}
 ![fungsi index](../Screenshoot/Modul6/7.png)
 
->  Menjalankan Aplikasi
+</br>Menjalankan Aplikasi
 ![web.php](../Screenshoot/Modul6/8.png)
 
 * ## Response Handler
->  Lakukan import library Response dengan menambahkan baris berikut di bagian atas file
+</br>Lakukan import library Response dengan menambahkan baris berikut di bagian atas file
 </br> use Illuminate\Http\Response;
 ![library response](../Screenshoot/Modul6/9.png)
 
->  Buatlah fungsi hello() yang berisi
+</br>Buatlah fungsi hello() yang berisi
 </br>public function hello()
 </br>{
 </br>$data['status'] = 'Success';
@@ -67,19 +67,19 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 </br>}
 ![fungsi hello](../Screenshoot/Modul6/10.png)
 
->  Tambahkan route /hello pada file routes/web.php
+</br>Tambahkan route /hello pada file routes/web.php
 </br>$router->get('/hello', ['uses' => 'HomeController@hello']);
 ![route hello](../Screenshoot/Modul6/11.png)
 
->  Menjalankan aplikasi pada route /hello
+</br>Menjalankan aplikasi pada route /hello
 ![web.php](../Screenshoot/Modul6/12.png)
 
 * ## Penerapan
->  Lakukan import model User dengan menambahkan baris berikut di bagian atas file
+</br>Lakukan import model User dengan menambahkan baris berikut di bagian atas file
 </br>use App\Models\User;
 ![import model user](../Screenshoot/Modul6/13.png)
 
-> Tambahkan ketiga fungsi berikut di HomeController.php
+</br>Tambahkan ketiga fungsi berikut di HomeController.php
 </br>public function defaultUser()
 </br>{
 </br>$user = User::create([
@@ -128,7 +128,7 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 </br>}
 ![menambahkan 3 fungsi](../Screenshoot/Modul6/14.png)
 
-> Tambahkan ketiga route pada file routes/web.php menggunakan group route
+</br>Tambahkan ketiga route pada file routes/web.php menggunakan group route
 </br>$router->group(['prefix' => 'users'], function () use ($router) {
 </br>$router->post('/default', ['uses' => 'HomeController@defaultUser']);
 </br>$router->post('/new', ['uses' => 'HomeController@createUser']);
@@ -136,11 +136,11 @@ Langkah-langkah dan hasil Screenshot praktikum   6 : Model, Controller dan Reque
 </br>});
 ![menambahkan 3 route](../Screenshoot/Modul6/15.png)
 
->  Jalankan aplikasi pada route /users/default menggunakan Postman
+</br>Jalankan aplikasi pada route /users/default menggunakan Postman
 ![menjalankan aplikasi di postman](../Screenshoot/Modul6/16.png)
 
->  Jalankan aplikasi pada route /users/new dengan mengisi body
+</br>Jalankan aplikasi pada route /users/new dengan mengisi body
 ![menjalankan aplikasi di postman](../Screenshoot/Modul6/17.png)
 
->  Jalankan aplikasi pada route /users/all
+</br>Jalankan aplikasi pada route /users/all
 ![menjalankan aplikasi di postman](../Screenshoot/Modul6/18.png)
