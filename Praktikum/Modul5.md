@@ -2,7 +2,7 @@
 
 Langkah-langkah dan hasil Screenshot praktikum  5 : Dynamic Route dan Middleware
 * ## Langkah 1 Dynamic Route
->  Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
+Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
 suatu halaman web, kadang kita melihat /users/1 atau /users/2 , hal ini yang dinamakan
 dynamic routes.
 <br>Untuk menambahkan dynamic routes pada aplikasi lumen kita, kita dapat menggunakan
@@ -30,7 +30,7 @@ kode dibawah ini
 
 
 * ## Langkah 2 Aliases Route
-> Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
+Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
 membantu kita, saat kita ingin memanggil route tersebut pada aplikasi kita. Berikut syntax
 untuk menambahkan aliases route<br /><br />
 $router->get('/auth/login', ['as' => 'route.auth.login', function (...) {...}])
@@ -46,7 +46,7 @@ $router->get('/auth/login', ['as' => 'route.auth.login', function (...) {...}])
 
 
 * ## Langkah 3 Group Route
-> Pada lumen, kita juga dapat memberikan grouping pada routes kita agar lebih mudah pada
+Pada lumen, kita juga dapat memberikan grouping pada routes kita agar lebih mudah pada
 saat penulisan route pada web.php kita. Kita dapat melakukan grouping dengan
 menggunakan syntax berikut,
 <br />$router->group(['prefix' => 'users'], function () use ($router) {
@@ -58,10 +58,10 @@ menggunakan syntax berikut,
 ![](../Screenshoot/Modul5/3.1.png)
 
 * ## Langkah 4 Middleware
->  Middleware adalah penengah antara komunikasi aplikasi dan client. Middleware biasanya digunakan untuk membatasi siapa yang dapat berinteraksi dengan aplikasi kita dan semacamnya, kita dapat menambahkan middleware dengan menambahkan file pada folder app/Http/Middleware . Pada folder tersebut terdapat file ExampleMiddleware , kita dapat men-copy file tersebut untuk membuat middleware baru.
-> Kemudian, setelah menambahkan filter pada AgeMiddleware , kita harus mendaftarkan
+Middleware adalah penengah antara komunikasi aplikasi dan client. Middleware biasanya digunakan untuk membatasi siapa yang dapat berinteraksi dengan aplikasi kita dan semacamnya, kita dapat menambahkan middleware dengan menambahkan file pada folder app/Http/Middleware . Pada folder tersebut terdapat file ExampleMiddleware , kita dapat men-copy file tersebut untuk membuat middleware baru.
+Kemudian, setelah menambahkan filter pada AgeMiddleware , kita harus mendaftarkan
 AgeMiddleware pada aplikasi kita, pada file bootstrap/app.php
-> Lalu, kita dapat menambahkan middleware pada routes kita dengan menambahkan opsi
+Lalu, kita dapat menambahkan middleware pada routes kita dengan menambahkan opsi
 middleware pada salah satu route
 ![](../Screenshoot/Modul5/4.png)
 ![](../Screenshoot/Modul5/4.1.png)
