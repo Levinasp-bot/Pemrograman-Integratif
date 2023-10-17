@@ -3,7 +3,7 @@
 Langkah-langkah dan hasil Screenshot praktikum  4 – Basic Routing dan Migration.
 ## GET
 * ## Langkah 1 
->  Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat
+</br> Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat
 mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada akhir file
 <br> $router->get('/get', function () {<br />
 <br>  return 'GET';<br />
@@ -11,12 +11,12 @@ mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada a
 ![Screenshot Menambahkan enpoint method GET pada file web.php (routes)](../Screenshoot/Modul4/1.png)
 
 * ## Langkah 2 
-> Setelah itu coba jalankan aplikasi dengan command,
-> php -S localhost:8000 -t public <br /><br />
+</br> Setelah itu coba jalankan aplikasi dengan command,
+</br> php -S localhost:8000 -t public <br /><br />
 ![Screenshot jalankan server](../Screenshoot/Modul4/2.png)
 
 * ## Langkah 3 
-> Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
+</br> Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
 http://localhost:8000/get, path yang akan kita akses akan berbentuk demikian,
 http://{BASE_URL}{PATH}, jika BASE_URL kita adalah localhost:8000 dan PATH kita
 adalah /get, maka url akan berbentuk seperti diatas.
@@ -24,8 +24,8 @@ adalah /get, maka url akan berbentuk seperti diatas.
 
 ## POST, PUT, PATCH, DELETE, dan OPTIONS
 * ## Langkah 1
->  Sama halnya saat menambahkan method GET, kita dapat menambahkan methode POST, PUT, PATCH, DELETE, dan OPTIONS pada file web.php dengan code seperti ini
-> <br> $router->post('/post', function () { </br>
+</br>Sama halnya saat menambahkan method GET, kita dapat menambahkan methode POST, PUT, PATCH, DELETE, dan OPTIONS pada file web.php dengan code seperti ini
+<br> $router->post('/post', function () { </br>
 <br> return 'POST'; </br>
 <br> }); </br>
 <br> $router->put('/put', function () { </br>
@@ -43,32 +43,32 @@ adalah /get, maka url akan berbentuk seperti diatas.
 ![Screenshot Menambahkan endpoint method POST, PUT, PATCH, DELETE, dan OPTIONS](../Screenshoot/Modul4/4.png)
 
 * ## Langkah 2
-> Mengakses url http://localhost:8000/get pada Thunder Client
+</br>Mengakses url http://localhost:8000/get pada Thunder Client
 ![](../Screenshoot/Modul4/4get.png)
 
 * ## Langkah 3
-> Mengakses url http://localhost:8000/post pada Thunder Client
+</br>Mengakses url http://localhost:8000/post pada Thunder Client
 ![](../Screenshoot/Modul4/4post.png) 
 
 * ## Langkah 4
-> Mengakses url http://localhost:8000/put pada Thunder Client
+</br>Mengakses url http://localhost:8000/put pada Thunder Client
 ![](../Screenshoot/Modul4/4put.ong) 
 
 * ## Langkah 5
-> Mengakses url http://localhost:8000/patch pada Thunder Client
+</br> Mengakses url http://localhost:8000/patch pada Thunder Client
 ![](../Screenshoot/Modul4/4patch.png) 
 
 * ## Langkah 6
-> Mengakses url http://localhost:8000/delete pada Thunder Client
+</br>Mengakses url http://localhost:8000/delete pada Thunder Client
 ![](../Screenshoot/Modul4/4delete.png) 
 
 ## Migrasi Database
 * ## Langkah 1 
->  Sebelum melakukan migrasi database pastikan server database aktif kemudian pastikan sudah membuat database dengan nama lumenapi<br />
+</br>Sebelum melakukan migrasi database pastikan server database aktif kemudian pastikan sudah membuat database dengan nama lumenapi<br />
 ![](../Screenshoot/Modul4/5a.png)
 
 * ## Langkah 2 
->  Kemudian ubah konfigurasi database pada file .env menjadi seperti ini<br /><br> DB_CONNECTION=mysql <br />
+</br>Kemudian ubah konfigurasi database pada file .env menjadi seperti ini<br /><br> DB_CONNECTION=mysql <br />
 <br> DB_HOST=127.0.0.1 <br />
 <br> DB_PORT=3306 <br />
 <br> DB_DATABASE=lumenapi <br />
@@ -78,8 +78,8 @@ adalah /get, maka url akan berbentuk seperti diatas.
 ![](../Screenshoot/Modul4/5b.png)
 
 * ## Langkah 3 
->Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan beberapa library bawaan dari lumen dengan membuka file app.php pada folder bootstrap dan mengubah baris ini,
-> <br>//$app->withFacades();<br />
+</br>Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan beberapa library bawaan dari lumen dengan membuka file app.php pada folder bootstrap dan mengubah baris ini,
+<br>//$app->withFacades();<br />
 <br>//$app->withEloquent(); <br />
 <br> Menjadi <br />
 <br> $app->withFacades();
@@ -87,8 +87,8 @@ $app->withEloquent(); <br />
 ![](../Screenshoot/Modul4/5c.png)
 
 * ## Langkah 4
-> Setelah itu jalankan command berikut untuk membuat file migration
-> <br> php artisan make:migration create_users_table # membuat migrasi
+</br>Setelah itu jalankan command berikut untuk membuat file migration
+<br> php artisan make:migration create_users_table # membuat migrasi
 untuk tabel users<br />
 <br>php artisan make:migration create_products_table # membuat
 migrasi untuk tabel products<br />
@@ -96,7 +96,7 @@ migrasi untuk tabel products<br />
 ![](../Screenshoot/Modul4/5d.png)
 
 * ## Langkah 5
-> Ubah fungsi up pada file migrasi create_users_table menjadi seperti dibawah ini
+</br>Ubah fungsi up pada file migrasi create_users_table menjadi seperti dibawah ini
 <br>public function up()<br />
 <br>{<br />
 <br>Schema::create('users', function (Blueprint $table) {<br />
@@ -110,7 +110,7 @@ migrasi untuk tabel products<br />
 
 
 * ## Langkah 6
-> Ubah fungsi up pada file migrasi create_products_table menjadi seperti dibawah ini
+</br>Ubah fungsi up pada file migrasi create_products_table menjadi seperti dibawah ini
 <br>public function up()<br />
 <br>{<br />
 <br>Schema::create('products', function (Blueprint $table) {<br />
@@ -127,10 +127,10 @@ migrasi untuk tabel products<br />
 ![](../Screenshoot/Modul4/5f.png)
 
 * ## Langkah 6
->  Kemudian jalankan command,
+</br> Kemudian jalankan command,
   php artisan migrate
 ![](../Screenshoot/Modul4/5g.png)
 
 * ## Langkah 7
-> Tampilan tabel yang berhasil dibuat pada database lumenapi di phpmyadmin
+</br>Tampilan tabel yang berhasil dibuat pada database lumenapi di phpmyadmin
 ![](../Screenshoot/Modul4/5h.png)
