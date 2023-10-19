@@ -88,28 +88,28 @@ Membuat satu tag menggunakan Postman
 ![](../Screenshoot/Modul7/26.png)
 * ### Langkah 7
 Menambahkan tag “jadul” pada post “disana engkau berdua”
-![](../Screenshoot/Modul7/27.png)
+![](../Screenshoot/Modul7/28.png)
 * ### Langkah 8
 Menampilkan post “disana engkau berdua” menggunakan Postman
-![](../Screenshoot/Modul7/28.png)
+![](../Screenshoot/Modul7/29.png)
 * ### Langkah 9
 Membuat postingan “tanpamu apa artinya” menggunakan Postman
-![](../Screenshoot/Modul7/29.png)
+![](../Screenshoot/Modul7/30.png)
 * ### Langkah 10
 Menambahkan tag “jadul” pada postingan “tanpamu apa artinya”
-![](../Screenshoot/Modul7/30.png)
+![](../Screenshoot/Modul7/31.png)
 * ### Langkah 11
 Membuat tag “lagu” menggunakan Postman
-![](../Screenshoot/Modul7/31.png)
+![](../Screenshoot/Modul7/32.png)
 * ### Langkah 12
 Menambahkan tag “lagu” pada postingan “tanpamu apa artinya”
-![](../Screenshoot/Modul7/32.png)
+![](../Screenshoot/Modul7/33.png)
 * ### Langkah 13
 Menampilkan post pertama
-![](../Screenshoot/Modul7/33.png)
+![](../Screenshoot/Modul7/34.png)
 * ### Langkah 14
 Menampilkan post kedua
-![](../Screenshoot/Modul7/34.png)
+![](../Screenshoot/Modul7/35.png)
 
 
 
