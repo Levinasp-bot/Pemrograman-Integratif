@@ -1,4 +1,4 @@
-# Praktikum  8 : Register, Authentication dan Authorization
+# Praktikum  9 : JSON Web Token (JWT)
 
 Langkah-langkah dan hasil Screenshot praktikum  8 : Register, Authentication dan Authorization
 * ## Register
