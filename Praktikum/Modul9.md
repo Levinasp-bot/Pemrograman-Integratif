@@ -57,7 +57,7 @@ Menambahkan baris berikut pada file web.php
 ![](../Screenshoot/Modul9/16.png)
 * ### Langkah 8
 Menjalankan aplikasi pada endpoint /auth/login
-![](../Screenshoot/Modul8/17.png)
+![](../Screenshoot/Modul9/17.png)
 * ### Langkah 9
 Menjalankan aplikasi pada endpoint /home
-![](../Screenshoot/Modul8/18.png)
+![](../Screenshoot/Modul9/18.png)
