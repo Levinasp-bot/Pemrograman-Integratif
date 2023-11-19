@@ -10,7 +10,7 @@ Menjalankan perintah ph partisan migrate:refresh untuk memperbaharui migrasi dan
 ![](../Screenshoot/Modul9/2.png)
 * ### Langkah 3
 Menjalankan aplikasi pada endpoint /auth/register
-![](../Screenshoot/Modul8/3.png)
+![](../Screenshoot/Modul9/3.png)
 
 * ## JWT Manual
 * ### Langkah 1
